@@ -15,7 +15,8 @@ interface BookmarkRepository {
 
     /**
      * Gets the bookmark associated with the URL.
-     *
+     * 与URL相关联的书签
+     * 能够发射0或者1个数据，要么成功，要么失败。有点类似于Optiona
      * @param url the URL to look for.
      * @return an observable that will emit either the bookmark associated with the URL or null.
      */

@@ -520,7 +520,7 @@ abstract class BrowserActivity : ThemableBrowserActivity(), BrowserView, UIContr
             right_drawer.requestLayout()
         }
     }
-
+    //初始化SP
     private fun initializePreferences() {
         val currentView = tabsManager.currentTab
         isFullScreen = userPreferences.fullScreenEnabled

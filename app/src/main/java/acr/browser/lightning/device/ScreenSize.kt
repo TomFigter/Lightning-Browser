@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 /**
  * A model used to determine the screen size info.
- *
+ *屏幕大小
  * Created by anthonycr on 2/19/18.
  */
 @Reusable

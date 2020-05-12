@@ -19,6 +19,7 @@ import androidx.annotation.ColorInt
 
 /**
  * The monolithic controller that routes events between views in the browser.
+ * 单片控制器之间的路由事件的观点在浏览器中
  */
 interface UIController {
 

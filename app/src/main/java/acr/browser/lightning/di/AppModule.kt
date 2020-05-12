@@ -48,75 +48,75 @@ import javax.inject.Singleton
 
 @Module
 class AppModule {
-
+    //对外提供主线程
     @Provides
     @MainHandler
     fun provideMainHandler() = Handler(Looper.getMainLooper())
-
+    //对外提供上下文环境
     @Provides
     fun provideContext(application: Application): Context = application.applicationContext
-
+    //对外提供 用户SP
     @Provides
     @UserPrefs
     fun provideUserPreferences(application: Application): SharedPreferences = application.getSharedPreferences("settings", 0)
-
+    //对外提供 Debug SP
     @Provides
     @DevPrefs
     fun provideDebugPreferences(application: Application): SharedPreferences = application.getSharedPreferences("developer_settings", 0)
-
+    //对外提供 广告SP
     @Provides
     @AdBlockPrefs
     fun provideAdBlockPreferences(application: Application): SharedPreferences = application.getSharedPreferences("ad_block_settings", 0)
-
+    //对外提供Asset 管理器
     @Provides
     fun providesAssetManager(application: Application): AssetManager = application.assets
-
+    //对外提供 剪切板管理器
     @Provides
     fun providesClipboardManager(application: Application) = application.getSystemService<ClipboardManager>()!!
-
+    //对外提供 输入法管理器
     @Provides
     fun providesInputMethodManager(application: Application) = application.getSystemService<InputMethodManager>()!!
-
+    //对外提供 下载管理器
     @Provides
     fun providesDownloadManager(application: Application) = application.getSystemService<DownloadManager>()!!
 
     @Provides
     fun providesConnectivityManager(application: Application) = application.getSystemService<ConnectivityManager>()!!
-
+    //对外提供 通知管理器
     @Provides
     fun providesNotificationManager(application: Application) = application.getSystemService<NotificationManager>()!!
-
+    //对外提供 window管理器
     @Provides
     fun providesWindowManager(application: Application) = application.getSystemService<WindowManager>()!!
-
+    //对外提供 快捷键管理器
     @RequiresApi(Build.VERSION_CODES.N_MR1)
     @Provides
     fun providesShortcutManager(application: Application) = application.getSystemService<ShortcutManager>()!!
-
+    //对外提供 IO线程
     @Provides
     @DatabaseScheduler
     @Singleton
     fun providesIoThread(): Scheduler = Schedulers.from(Executors.newSingleThreadExecutor())
-
+    //对外提供 磁盘线程
     @Provides
     @DiskScheduler
     @Singleton
     fun providesDiskThread(): Scheduler = Schedulers.from(Executors.newSingleThreadExecutor())
-
+    //对外提供 网络线程
     @Provides
     @NetworkScheduler
     @Singleton
     fun providesNetworkThread(): Scheduler = Schedulers.from(ThreadPoolExecutor(0, 4, 60, TimeUnit.SECONDS, LinkedBlockingDeque()))
-
+    //对外提供 主线程
     @Provides
     @MainScheduler
     @Singleton
     fun providesMainThread(): Scheduler = AndroidSchedulers.mainThread()
-
+    //对外提供 缓存控制
     @Singleton
     @Provides
     fun providesSuggestionsCacheControl(): CacheControl = CacheControl.Builder().maxStale(1, TimeUnit.DAYS).build()
-
+    //对外提供 请求工厂
     @Singleton
     @Provides
     fun providesSuggestionsRequestFactory(cacheControl: CacheControl): RequestFactory = object : RequestFactory {
@@ -127,7 +127,7 @@ class AppModule {
                 .build()
         }
     }
-
+    //最大缓存Age
     private fun createInterceptorWithMaxCacheAge(maxCacheAgeSeconds: Long) = Interceptor { chain ->
         chain.proceed(chain.request()).newBuilder()
             .header("cache-control", "max-age=$maxCacheAgeSeconds, max-stale=$maxCacheAgeSeconds")
@@ -159,7 +159,7 @@ class AppModule {
             .addNetworkInterceptor(createInterceptorWithMaxCacheAge(intervalYear))
             .build()
     }.cache()
-
+    //对外提供 Log打印
     @Provides
     @Singleton
     fun provideLogger(buildInfo: BuildInfo): Logger = if (buildInfo.buildType == BuildType.DEBUG) {
@@ -171,22 +171,22 @@ class AppModule {
     @Provides
     @Singleton
     fun provideI2PAndroidHelper(application: Application): I2PAndroidHelper = I2PAndroidHelper(application)
-
+    //对外提供 列表页面
     @Provides
     fun providesListPageReader(): ListPageReader = MezzanineGenerator.ListPageReader()
-
+    //对外提供 主页面
     @Provides
     fun providesHomePageReader(): HomePageReader = MezzanineGenerator.HomePageReader()
-
+    //对外提供 书签页面
     @Provides
     fun providesBookmarkPageReader(): BookmarkPageReader = MezzanineGenerator.BookmarkPageReader()
-
+    //对外提供 文本流
     @Provides
     fun providesTextReflow(): TextReflow = MezzanineGenerator.TextReflow()
-
+    //对外提供 主题颜色
     @Provides
     fun providesThemeColor(): ThemeColor = MezzanineGenerator.ThemeColor()
-
+    //对外提供 无痕浏览
     @Provides
     fun providesInvertPage(): InvertPage = MezzanineGenerator.InvertPage()
 

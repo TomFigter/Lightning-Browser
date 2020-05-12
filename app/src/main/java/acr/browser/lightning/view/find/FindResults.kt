@@ -2,24 +2,22 @@ package acr.browser.lightning.view.find
 
 
 /**
- * Defines interactions with the result of a find in page action.
+ * 搜索页面中关键字的结果
  */
 interface FindResults {
 
     /**
-     * Select the next result of the find in page results. If [clearResults] has been called then
-     * has no effect. If the last result is selected, then there will be no effect.
+     * 下一个搜索结果
      */
     fun nextResult()
 
     /**
-     * Select the previous result in the find in page results. If [clearResults] has been called
-     * then has no effect. If the first result is selected, then there will be no effect.
+     * 上一个搜索结果
      */
     fun previousResult()
 
     /**
-     * Clear the find in page results.
+     * 清除搜索结果
      */
     fun clearResults()
 

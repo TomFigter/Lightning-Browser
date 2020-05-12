@@ -6,9 +6,9 @@ package acr.browser.lightning.device
 data class BuildInfo(val buildType: BuildType)
 
 /**
- * The types of builds that this instance of the app could be.
+ *枚举 app构建模式
  */
 enum class BuildType {
-    DEBUG,
-    RELEASE
+    DEBUG, //Debug模式
+    RELEASE //Release模式
 }

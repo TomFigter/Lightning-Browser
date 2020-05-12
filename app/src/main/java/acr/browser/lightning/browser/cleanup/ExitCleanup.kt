@@ -12,6 +12,7 @@ interface ExitCleanup {
 
     /**
      * Clean up the instance of the browser with the provided [webView] and [context].
+     * 清理浏览器实例提供的(web视图)和(上下文)。
      */
     fun cleanUp(webView: WebView?, context: BrowserActivity)
 

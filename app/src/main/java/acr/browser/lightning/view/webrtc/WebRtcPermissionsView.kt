@@ -1,21 +1,18 @@
 package acr.browser.lightning.view.webrtc
 
 /**
- * A view which specializes in requesting device permissions and resources from the user.
+ * 此视图专门处理用户请求设备权限和资源申请
  */
 interface WebRtcPermissionsView {
     /**
-     * Request the provided permissions from the user, and call back to [onGrant] with true when all
-     * the permissions have been granted, or false if one or more was denied.
-     *
+     *请求权限
      * @param permissions the permissions to request.
      * @param onGrant the callback to invoke when the user indicates their intent to grant or deny.
      */
     fun requestPermissions(permissions: Set<String>, onGrant: (Boolean) -> Unit)
 
     /**
-     * Request the provided device resources from the user, and call back to [onGrant] with true
-     * when all the permissions have been granted, or false if one or more was denied.
+     * 请求资源
      *
      * @param source the domain from which the request originated.
      * @param resources the device resources being requested.

@@ -10,7 +10,7 @@ import android.webkit.CookieSyncManager
 import io.reactivex.Completable
 
 class MainActivity : BrowserActivity() {
-
+    //更新Cookie SP
     @Suppress("DEPRECATION")
     public override fun updateCookiePreference(): Completable = Completable.fromAction {
         val cookieManager = CookieManager.getInstance()
@@ -19,7 +19,7 @@ class MainActivity : BrowserActivity() {
         }
         cookieManager.setAcceptCookie(userPreferences.cookiesEnabled)
     }
-
+    //创建Option Menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return super.onCreateOptionsMenu(menu)
