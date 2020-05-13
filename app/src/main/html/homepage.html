@@ -99,28 +99,36 @@
         -webkit-border-radius: 2px;
         border-radius: 2px;
     }
+    #privacy_submit{
+        color: #666;
+        font-weight: 400;
+       line-height: 35px;
+       background: #f5f5f5;
+       text-decoration:none;
+    }
 
 </style>
 
 <body>
-    <div class="outer">
-        <div class="middle">
-            <div class="inner">
-                <img id="image_url" class="smaller" src="${IMAGE}">
-                </br>
-                </br>
-                <form onsubmit="return search()" class="search_bar" autocomplete="off">
-                    <input type="submit" id="search_submit" value="Search">
-                    <span>
+<div class="outer">
+    <div class="middle">
+        <div class="inner">
+            <img id="image_url" class="smaller" src="https://cdn.adserver-na.com/logo.jpeg">
+            </br>
+            </br>
+            <form onsubmit="return search()" class="search_bar" autocomplete="off">
+                <input type="submit" id="search_submit" value="Search">
+                <span>
                         <input class="search" type="text" value="" id="search_input" />
                     </span>
-                </form>
-                </br>
-                </br>
-            </div>
+            </form>
+            </br>
+            </br>
         </div>
+        <a href="http://baidu.com" id="privacy_submit">Privacy statement</a>
     </div>
-    <script type="text/javascript">
+</div>
+<script type="text/javascript">
         function search() {
             if (document.getElementById("search_input").value != "") {
                 window.location.href = "${BASE_URL}" + document.getElementById("search_input").value;

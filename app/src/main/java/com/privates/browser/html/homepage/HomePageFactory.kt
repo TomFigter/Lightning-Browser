@@ -56,11 +56,11 @@ class HomePageFactory @Inject constructor(
      * Create the home page file.
      */
     fun createHomePage() = File(application.filesDir, FILENAME)
-
+    fun cratePrivacyPage()=File(application.filesDir, PRIVACY_FILENAME)
     companion object {
 
         const val FILENAME = "homepage.html"
-
+        const val PRIVACY_FILENAME="privacy.html"
     }
 
 }
