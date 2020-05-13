@@ -2,7 +2,7 @@
 <!-- Copyright 2014 A.C.R. Development -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="acr.browser.lightning"
+    package="com.privates.browser"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -33,11 +33,10 @@
         android:required="false"/>
 
     <application
-        android:name=".BrowserApp"
+        android:name="com.privates.browser.BrowserApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
         android:label="@string/app_name">
         <meta-data
@@ -48,7 +47,7 @@
             android:value="2.1"/>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.privates.browser.MainActivity"
             android:alwaysRetainTaskState="true"
             android:clearTaskOnLaunch="false"
             android:colorMode="wideColorGamut"
@@ -139,14 +138,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".IncognitoActivity"
+            android:name="com.privates.browser.IncognitoActivity"
             android:alwaysRetainTaskState="true"
             android:colorMode="wideColorGamut"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard"
             android:label="@string/app_name"
             android:launchMode="singleInstance"
             android:process=":incognito"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.privates.browser.MainActivity"
             android:theme="@style/Theme.DarkTheme"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
@@ -156,7 +155,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".settings.activity.SettingsActivity"
+            android:name="com.privates.browser.settings.activity.SettingsActivity"
             android:colorMode="wideColorGamut"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard"
             android:label="@string/settings"
@@ -168,7 +167,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".reading.activity.ReadingActivity"
+            android:name="com.privates.browser.reading.activity.ReadingActivity"
             android:colorMode="wideColorGamut"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard"
             android:label="@string/reading_mode"
