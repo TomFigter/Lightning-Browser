@@ -30655,7 +30655,7 @@
 127.0.0.1	liveinternet.ru
 127.0.0.1	livejasmin.com
 127.0.0.1	livepass.conviva.com
-127.0.0.1	liveprivates.com
+127.0.0.1	livehardcore.com
 127.0.0.1	livere.co.kr
 127.0.0.1	livere.co.kr.cizion.ixcloud.net
 127.0.0.1	liversely.com

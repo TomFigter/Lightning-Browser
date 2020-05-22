@@ -12,7 +12,7 @@
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
 -keep public class com.android.vending.licensing.ILicensingService
--keep public class com.privates.browser.reading.*
+-keep public class com.hardcore.browser.reading.*
 
 -assumenosideeffects class android.util.Log {
     public static *** d(...);
@@ -27,7 +27,7 @@
 }
 
 # Without this rule, openFileChooser does not get called on KitKat
--keep class com.privates.browser.view.LightningView$LightningChromeClient {
+-keep class com.hardcore.browser.view.LightningView$LightningChromeClient {
     void openFileChooser(android.webkit.ValueCallback);
     void openFileChooser(android.webkit.ValueCallback, java.lang.String);
     void openFileChooser(android.webkit.ValueCallback, java.lang.String, java.lang.String);

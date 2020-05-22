@@ -2,7 +2,7 @@
 <!-- Copyright 2014 A.C.R. Development -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.privates.browser"
+    package="com.hardcore.browser"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -33,7 +33,7 @@
         android:required="false"/>
 
     <application
-        android:name="com.privates.browser.BrowserApp"
+        android:name="com.hardcore.browser.BrowserApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -47,7 +47,7 @@
             android:value="2.1"/>
 
         <activity
-            android:name="com.privates.browser.MainActivity"
+            android:name="com.hardcore.browser.MainActivity"
             android:alwaysRetainTaskState="true"
             android:clearTaskOnLaunch="false"
             android:colorMode="wideColorGamut"
@@ -138,14 +138,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.privates.browser.IncognitoActivity"
+            android:name="com.hardcore.browser.IncognitoActivity"
             android:alwaysRetainTaskState="true"
             android:colorMode="wideColorGamut"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard"
             android:label="@string/app_name"
             android:launchMode="singleInstance"
             android:process=":incognito"
-            android:parentActivityName="com.privates.browser.MainActivity"
+            android:parentActivityName="com.hardcore.browser.MainActivity"
             android:theme="@style/Theme.DarkTheme"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
@@ -155,7 +155,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.privates.browser.settings.activity.SettingsActivity"
+            android:name="com.hardcore.browser.settings.activity.SettingsActivity"
             android:colorMode="wideColorGamut"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard"
             android:label="@string/settings"
@@ -167,7 +167,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.privates.browser.reading.activity.ReadingActivity"
+            android:name="com.hardcore.browser.reading.activity.ReadingActivity"
             android:colorMode="wideColorGamut"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard"
             android:label="@string/reading_mode"

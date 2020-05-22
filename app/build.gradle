@@ -21,7 +21,14 @@ android {
         lightningPlus.setRoot('src/LightningPlus')
         lightningLite.setRoot('src/LightningLite')
     }
-
+    signingConfigs {
+        brwoserConfig{
+            keyAlias 'papaya_browser'
+            keyPassword 'browser'
+            storeFile file('/Users/lsc/WorkSpace/Android/Git/Browser/Lightning/browser.jks')
+            storePassword 'papaya'
+        }
+    }
     buildTypes {
         debug {
             multiDexEnabled true
@@ -37,7 +44,7 @@ android {
             shrinkResources true
             proguardFiles 'proguard-project.txt'
             testCoverageEnabled false
-
+            signingConfig signingConfigs.brwoserConfig
             ndk {
                 abiFilters "arm64-v8a", "armeabi-v7a", "armeabi", "mips"
             }
@@ -59,14 +66,14 @@ android {
         lightningPlus {
             dimension "capabilities"
             buildConfigField "boolean", "FULL_VERSION", "Boolean.parseBoolean(\"true\")"
-            applicationId "com.privates.browser"
+            applicationId "com.hardcore.browser"
             versionCode 101
         }
 
         lightningLite {
             dimension "capabilities"
             buildConfigField "boolean", "FULL_VERSION", "Boolean.parseBoolean(\"false\")"
-            applicationId "com.privates.browser"
+            applicationId "com.hardcore.browser"
             versionCode 102
         }
     }
