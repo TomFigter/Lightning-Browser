@@ -72,11 +72,11 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             onClick = ::showHomePageDialog
         )
 
-        clickableDynamicPreference(
-            preference = SETTINGS_SEARCH_ENGINE,
-            summary = getSearchEngineSummary(searchEngineProvider.provideSearchEngine()),
-            onClick = ::showSearchProviderDialog
-        )
+//        clickableDynamicPreference(
+//            preference = SETTINGS_SEARCH_ENGINE,
+//            summary = getSearchEngineSummary(searchEngineProvider.provideSearchEngine()),
+//            onClick = ::showSearchProviderDialog
+//        )
 
         clickableDynamicPreference(
             preference = SETTINGS_SUGGESTIONS,
